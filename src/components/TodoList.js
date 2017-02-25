@@ -1,8 +1,9 @@
 import React from 'react'
 import Todo from './Todo'
+import { StyleSheet, css } from 'aphrodite'
 
 const TodoList = ({ todos=[], onTodoClick }) => (
-  <ul>
+  <ul className={css(styles.ul)}>
     { todos.map(todo =>
       <Todo
         key={todo.id}
@@ -14,3 +15,9 @@ const TodoList = ({ todos=[], onTodoClick }) => (
 )
 
 export default TodoList
+
+const styles = StyleSheet.create({
+  ul: {
+    padding: 0
+  }
+})

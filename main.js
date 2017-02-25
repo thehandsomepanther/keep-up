@@ -1,4 +1,5 @@
 const electron = require('electron')
+require('electron-reload')(__dirname)
 const app = electron.app
 const BrowserWindow = electron.BrowserWindow
 
@@ -8,7 +9,19 @@ const url = require('url')
 let mainWindow
 
 function createWindow () {
-  mainWindow = new BrowserWindow({width: 800, height: 600})
+  const { width, height } = electron.screen.getPrimaryDisplay().workAreaSize
+  let windowWidth = 300
+  let windowHeight = 200
+  let marginX = 20
+  let marginY = marginX + 20
+
+  mainWindow = new BrowserWindow({
+    width: windowWidth,
+    height: windowHeight,
+    frame: false,
+    x: width - (windowWidth + marginX),
+    y: marginY
+  })
 
   mainWindow.loadURL(url.format({
     pathname: path.join(__dirname, 'public/index.html'),

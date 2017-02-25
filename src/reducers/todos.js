@@ -4,12 +4,16 @@ const todo = (state, action) => {
       if (state.id !== action.id) {
         return state
       }
-
-      return
+      return {
+        id: action.id,
+        text: action.text,
+        active: false
+      }
     case 'ADD_TODO':
       return {
         id: action.id,
-        text: action.text
+        text: action.text,
+        active: true
       }
     default:
       return state

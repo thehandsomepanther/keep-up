@@ -8,5 +8,6 @@ export const removeTodo = (id) => ({
 export const addTodo = (text) => ({
   type: 'ADD_TODO',
   id: nextTodoId++,
+  active: true,
   text
 })
