@@ -18,6 +18,7 @@ export default TodoList
 
 const styles = StyleSheet.create({
   ul: {
-    padding: 0
+    padding: 0,
+    marginBottom: 0
   }
 })

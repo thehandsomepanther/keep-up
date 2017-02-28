@@ -10,17 +10,18 @@ let mainWindow
 
 function createWindow () {
   const { width, height } = electron.screen.getPrimaryDisplay().workAreaSize
-  let windowWidth = 300
+  let windowWidth = 380
   let windowHeight = 200
-  let marginX = 20
-  let marginY = marginX + 20
+  let marginX = 0
+  let marginY = marginX + 0
 
   mainWindow = new BrowserWindow({
     width: windowWidth,
     height: windowHeight,
     frame: false,
     x: width - (windowWidth + marginX),
-    y: marginY
+    y: marginY,
+    transparent: true
   })
 
   mainWindow.loadURL(url.format({
@@ -29,7 +30,7 @@ function createWindow () {
     slashes: true
   }))
 
-  // mainWindow.setAlwaysOnTop(true)
+  mainWindow.setAlwaysOnTop(true)
   mainWindow.on('closed', function () {
     mainWindow = null
   })
