@@ -11,7 +11,7 @@ let mainWindow
 function createWindow () {
   const { width, height } = electron.screen.getPrimaryDisplay().workAreaSize
   let windowWidth = 380
-  let windowHeight = 200
+  let windowHeight = height
   let marginX = 0
   let marginY = marginX + 0
 

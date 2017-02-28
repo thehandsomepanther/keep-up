@@ -20,9 +20,7 @@ const todo = (state, action) => {
   }
 }
 
-const todos = (state=[
-  {id: -1, text: "something", active: true}
-], action) => {
+const todos = (state=[], action) => {
   switch(action.type) {
     case 'REMOVE_TODO':
       return state.map(t =>

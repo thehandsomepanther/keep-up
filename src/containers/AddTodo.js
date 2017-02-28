@@ -85,6 +85,8 @@ const styles = StyleSheet.create({
     fontFamily: 'Helvetica, sans-serif',
     ':focus': {
       outline: 'none'
-    }
+    },
+    display: 'inline-block',
+    width: '250px'
   }
 })
